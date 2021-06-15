@@ -15,6 +15,22 @@ namespace Lesson6WorkWithForms
         public Form1()
         {
             InitializeComponent();
+
+            List<string> users = new List<string>
+            {
+                "Murad",
+                "Cavid",
+                "Tural"
+            };
+            int x = 100;
+            int y = 300;
+            foreach (var item in users)
+            {
+                PlayerDataUC playerDataUC = new PlayerDataUC(item);
+                playerDataUC.Location = new Point(x, y);
+                y += 70;
+                this.Controls.Add(playerDataUC);
+            }
         }
 
         private void openBtn_Click(object sender, EventArgs e)
